@@ -16,5 +16,3 @@ Key capabilities include:
 - A dashboard with indicators and charts for overall campaign progress and deadlines
 - Sponsor communication support, including reminders and the ability to share child labels as images
 
-For the full high-level scope and functional areas, see [Docs/Project_description.md](Project_description.md).
-
