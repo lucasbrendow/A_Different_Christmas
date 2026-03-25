@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "oOcu9N/bkp1esfI19VBleAPrOCMlWNalz0yXfsxfoU7AmrNR242sOIS7n972SRZktLesRFUdi/kZQZqUkaRsrg==",
+  "success": true,
+  "projectFilePath": "C:\\Projetos\\A_Different_Christmas\\ND.Service\\src\\ND.Service.Application\\ND.Service.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lbren\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

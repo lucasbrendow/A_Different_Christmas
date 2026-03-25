@@ -1,0 +1,15 @@
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\bin\Debug\net6.0\ND.Service.Application.deps.json
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\bin\Debug\net6.0\ND.Service.Application.dll
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\bin\Debug\net6.0\ref\ND.Service.Application.dll
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\bin\Debug\net6.0\ND.Service.Application.pdb
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\bin\Debug\net6.0\ND.Service.Domain.dll
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\bin\Debug\net6.0\ND.Service.Domain.pdb
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\obj\Debug\net6.0\ND.Service.Application.csproj.AssemblyReference.cache
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\obj\Debug\net6.0\ND.Service.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\obj\Debug\net6.0\ND.Service.Application.AssemblyInfoInputs.cache
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\obj\Debug\net6.0\ND.Service.Application.AssemblyInfo.cs
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\obj\Debug\net6.0\ND.Service.Application.csproj.CoreCompileInputs.cache
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\obj\Debug\net6.0\ND.Service.Application.csproj.CopyComplete
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\obj\Debug\net6.0\ND.Service.Application.dll
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\obj\Debug\net6.0\ref\ND.Service.Application.dll
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Application\obj\Debug\net6.0\ND.Service.Application.pdb

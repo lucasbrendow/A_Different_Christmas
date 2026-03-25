@@ -1,0 +1,6 @@
+{
+  "ND.Service.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Projetos\\A_Different_Christmas\\ND.Service\\src\\ND.Service.Api",
+  "ND.Service.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Projetos\\A_Different_Christmas\\ND.Service\\src\\ND.Service.Application",
+  "ND.Service.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Projetos\\A_Different_Christmas\\ND.Service\\src\\ND.Service.Domain",
+  "ND.Service.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Projetos\\A_Different_Christmas\\ND.Service\\src\\ND.Service.Infrastructure"
+}

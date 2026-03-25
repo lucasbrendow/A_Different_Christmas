@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "H6JFxwPzD1oVmTm3+ybOFTm/bD1svsxflDso8lvsuEU=",
+  "Source": "ND.Service.Api",
+  "BasePath": "_content/ND.Service.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

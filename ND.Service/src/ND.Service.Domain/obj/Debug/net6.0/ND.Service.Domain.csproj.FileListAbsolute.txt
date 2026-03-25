@@ -1,0 +1,12 @@
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\bin\Debug\net6.0\ND.Service.Domain.deps.json
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\bin\Debug\net6.0\ND.Service.Domain.dll
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\bin\Debug\net6.0\ref\ND.Service.Domain.dll
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\bin\Debug\net6.0\ND.Service.Domain.pdb
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\obj\Debug\net6.0\ND.Service.Domain.csproj.AssemblyReference.cache
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\obj\Debug\net6.0\ND.Service.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\obj\Debug\net6.0\ND.Service.Domain.AssemblyInfoInputs.cache
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\obj\Debug\net6.0\ND.Service.Domain.AssemblyInfo.cs
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\obj\Debug\net6.0\ND.Service.Domain.csproj.CoreCompileInputs.cache
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\obj\Debug\net6.0\ND.Service.Domain.dll
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\obj\Debug\net6.0\ref\ND.Service.Domain.dll
+C:\Projetos\A_Different_Christmas\ND.Service\src\ND.Service.Domain\obj\Debug\net6.0\ND.Service.Domain.pdb
