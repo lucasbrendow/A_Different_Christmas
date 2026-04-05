@@ -5,7 +5,7 @@ import { useAppSettings } from '../state/AppSettingsContext';
 
 export function AdminLayout() {
   const { t } = useAppTranslation();
-  const { language, supportedLanguages, setLanguage } = useAppSettings();
+  const { language, signOut, supportedLanguages, setLanguage } = useAppSettings();
 
   return (
     <div className="app-shell">
@@ -33,11 +33,14 @@ export function AdminLayout() {
               </button>
             ))}
           </div>
+          <button className="button button--secondary" type="button" onClick={signOut}>
+            {t('app.signOut')}
+          </button>
         </div>
       </header>
 
       <nav className="navigation">
-        <NavLink className="navigation__link" to="/">
+        <NavLink className="navigation__link" to="/dashboard">
           {t('navigation.dashboard')}
         </NavLink>
       </nav>

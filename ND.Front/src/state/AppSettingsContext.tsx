@@ -9,15 +9,19 @@ interface AppSettingsContextValue {
   language: AppLanguage;
   supportedLanguages: readonly AppLanguage[];
   isAuthenticated: boolean;
+  signIn: (rememberSession: boolean) => void;
+  signOut: () => void;
   setLanguage: (language: AppLanguage) => void;
 }
 
-const storageKey = 'nd.front.language';
+const languageStorageKey = 'nd.front.language';
+const persistentAuthStorageKey = 'nd.front.auth.persistent';
+const sessionAuthStorageKey = 'nd.front.auth.session';
 
 const AppSettingsContext = createContext<AppSettingsContextValue | undefined>(undefined);
 
 function getInitialLanguage() {
-  const storedLanguage = window.localStorage.getItem(storageKey);
+  const storedLanguage = window.localStorage.getItem(languageStorageKey);
 
   if (storedLanguage === 'pt-BR' || storedLanguage === 'en-US') {
     return storedLanguage;
@@ -26,22 +30,51 @@ function getInitialLanguage() {
   return appConfig.defaultLanguage;
 }
 
+function getInitialAuthenticationState() {
+  return (
+    window.localStorage.getItem(persistentAuthStorageKey) === 'true' ||
+    window.sessionStorage.getItem(sessionAuthStorageKey) === 'true'
+  );
+}
+
 export function AppSettingsProvider({ children }: PropsWithChildren) {
   const [language, setLanguageState] = useState<AppLanguage>(getInitialLanguage);
+  const [isAuthenticated, setIsAuthenticated] = useState(getInitialAuthenticationState);
 
   useEffect(() => {
-    window.localStorage.setItem(storageKey, language);
+    window.localStorage.setItem(languageStorageKey, language);
     void i18n.changeLanguage(language);
   }, [language]);
+
+  function signIn(rememberSession: boolean) {
+    setIsAuthenticated(true);
+
+    if (rememberSession) {
+      window.localStorage.setItem(persistentAuthStorageKey, 'true');
+      window.sessionStorage.removeItem(sessionAuthStorageKey);
+      return;
+    }
+
+    window.sessionStorage.setItem(sessionAuthStorageKey, 'true');
+    window.localStorage.removeItem(persistentAuthStorageKey);
+  }
+
+  function signOut() {
+    setIsAuthenticated(false);
+    window.localStorage.removeItem(persistentAuthStorageKey);
+    window.sessionStorage.removeItem(sessionAuthStorageKey);
+  }
 
   const value = useMemo<AppSettingsContextValue>(
     () => ({
       language,
       supportedLanguages: appConfig.supportedLanguages,
-      isAuthenticated: appConfig.enableMockAuth,
+      isAuthenticated,
+      signIn,
+      signOut,
       setLanguage: setLanguageState,
     }),
-    [language],
+    [isAuthenticated, language],
   );
 
   return <AppSettingsContext.Provider value={value}>{children}</AppSettingsContext.Provider>;

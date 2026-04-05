@@ -19,3 +19,17 @@ export interface AsyncDataState<TData> {
   data: TData | null;
   error: string | null;
 }
+
+export interface CampaignImpactSummary {
+  supportedChildren: number;
+  collectedGifts: number;
+  participatingGuardians: number;
+  completionRate: number;
+  lastUpdatedUtc: string;
+}
+
+export interface LoginCredentials {
+  email: string;
+  password: string;
+  rememberMe: boolean;
+}

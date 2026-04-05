@@ -6,7 +6,7 @@ export function RequireAuthentication() {
   const { isAuthenticated } = useAppSettings();
 
   if (!isAuthenticated) {
-    return <Navigate replace to="/access-pending" />;
+    return <Navigate replace to="/" />;
   }
 
   return <Outlet />;

@@ -88,7 +88,8 @@ a {
 
 .topbar,
 .navigation,
-.panel {
+.panel,
+.login-shell {
   position: relative;
   z-index: 1;
 }
@@ -282,6 +283,12 @@ a {
   border: 1px solid rgba(120, 72, 52, 0.14);
 }
 
+.button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
 .form-panel {
   position: sticky;
   top: 24px;
@@ -322,6 +329,11 @@ input:focus,
 select:focus {
   outline: 2px solid rgba(187, 45, 59, 0.18);
   border-color: rgba(187, 45, 59, 0.4);
+}
+
+input[type='checkbox'] {
+  width: auto;
+  padding: 0;
 }
 
 .status-badge {
@@ -375,12 +387,350 @@ select:focus {
   text-align: center;
 }
 
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.login-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.login-page::before {
+  z-index: -1;
+  background-image: var(--login-background-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1.03);
+}
+
+.login-shell {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.login-topbar,
+.login-grid,
+.login-panel__actions,
+.login-form__remember,
+.tree-ornament,
+.tree-metrics {
+  display: flex;
+}
+
+.login-topbar {
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 24px 28px;
+  background: rgba(255, 249, 243, 0.82);
+  border: 1px solid rgba(120, 72, 52, 0.16);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+}
+
+.login-topbar h1,
+.login-panel h2,
+.tree-panel h2,
+.tree-panel h3,
+.tree-stat__value {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.login-topbar p,
+.login-panel p,
+.tree-panel p,
+.tree-stat__label,
+.login-note,
+.tree-panel time {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.login-topbar__actions {
+  display: grid;
+  justify-items: end;
+  gap: 12px;
+}
+
+.login-grid {
+  align-items: stretch;
+  gap: 24px;
+}
+
+.login-grid--solo {
+  min-height: 100vh;
+  align-items: stretch;
+  justify-content: flex-end;
+  padding-right: clamp(20px, 5vw, 100px);
+}
+
+.tree-panel,
+.login-panel {
+  flex: 1;
+}
+
+.tree-panel {
+  padding: 28px 0;
+  overflow: hidden;
+}
+
+.tree-panel__header,
+.login-panel__header {
+  display: grid;
+  gap: 12px;
+}
+
+.tree-scene {
+  position: relative;
+  margin: 28px auto 12px;
+  min-height: 410px;
+  border-radius: calc(var(--radius-lg) - 6px);
+  padding: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 6%, rgba(255, 231, 162, 0.54), transparent 20%),
+    linear-gradient(180deg, rgba(252, 243, 228, 0.48) 0%, rgba(246, 233, 218, 0.36) 100%);
+}
+
+.tree-scene::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 248, 240, 0.03) 0%, rgba(64, 34, 25, 0.08) 100%);
+  pointer-events: none;
+}
+
+.tree-ornament {
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  width: 118px;
+  height: 118px;
+  padding: 16px;
+  border-radius: 999px;
+  text-align: center;
+  color: #fff9f1;
+  box-shadow: 0 14px 28px rgba(46, 31, 26, 0.16);
+}
+
+.tree-ornament strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.6rem;
+}
+
+.tree-ornament span {
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+.tree-ornament--children {
+  top: 86px;
+  left: 7%;
+  background: linear-gradient(135deg, #c83e49 0%, #9c2630 100%);
+}
+
+.tree-ornament--gifts {
+  top: 126px;
+  right: 7%;
+  background: linear-gradient(135deg, #e09f3e 0%, #bf7f1f 100%);
+}
+
+.tree-ornament--guardians {
+  right: 12%;
+  bottom: 34px;
+  background: linear-gradient(135deg, #4f8f76 0%, #24634c 100%);
+}
+
+.tree-metrics {
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.tree-stat {
+  flex: 1;
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 252, 248, 0.9);
+  border: 1px solid rgba(120, 72, 52, 0.08);
+}
+
+.tree-stat__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.84rem;
+}
+
+.tree-meta {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.login-panel {
+  position: relative;
+  flex: 0 0 clamp(320px, 26vw, 400px);
+  align-self: stretch;
+  width: clamp(320px, 26vw, 400px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 42px 34px;
+  color: #fff7ef;
+  background:
+    radial-gradient(circle at top left, rgba(160, 28, 50, 0.5), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(101, 10, 33, 0.46), transparent 34%),
+    linear-gradient(135deg, rgba(101, 9, 31, 0.98) 0%, rgba(128, 18, 42, 0.96) 48%, rgba(89, 8, 27, 0.98) 100%);
+  border: 2px solid rgba(212, 172, 87, 0.9);
+  border-radius: 0;
+  box-shadow:
+    -18px 0 38px rgba(23, 9, 9, 0.34),
+    inset 0 1px 0 rgba(255, 234, 181, 0.34),
+    inset 0 -8px 18px rgba(66, 5, 21, 0.36);
+  backdrop-filter: blur(8px);
+}
+
+.login-panel::before,
+.login-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 16px;
+  background: linear-gradient(180deg, #f0d48a 0%, #ba8730 50%, #f0d48a 100%);
+  border-radius: 0;
+  box-shadow: 0 0 0 1px rgba(110, 67, 10, 0.32);
+}
+
+.login-panel::before {
+  left: 0;
+}
+
+.login-panel::after {
+  right: 0;
+}
+
+.login-panel .eyebrow {
+  color: #f4d58b;
+}
+
+.login-panel h2,
+.login-panel p,
+.login-note,
+.login-form__remember {
+  color: #fff7ef;
+}
+
+.login-panel p,
+.login-note {
+  color: rgba(255, 241, 224, 0.84);
+}
+
+.login-form {
+  display: grid;
+  gap: 18px;
+}
+
+.login-form__remember {
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.login-form__remember input {
+  accent-color: #d9b35d;
+}
+
+.login-panel .form-field__label {
+  color: #f8df9f;
+}
+
+.login-panel input {
+  border: 1px solid rgba(227, 196, 118, 0.56);
+  background: rgba(255, 248, 237, 0.9);
+  color: #48231e;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68);
+}
+
+.login-panel input:focus {
+  outline: 2px solid rgba(240, 212, 138, 0.28);
+  border-color: rgba(240, 212, 138, 0.92);
+}
+
+.login-panel .form-field__hint {
+  color: rgba(255, 239, 216, 0.72);
+}
+
+.login-panel .form-field__error {
+  color: #ffd7b8;
+}
+
+.login-panel__actions {
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-feedback {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 238, 226, 0.14);
+  color: #fff0df;
+  border: 1px solid rgba(240, 212, 138, 0.28);
+}
+
+.login-note {
+  font-size: 0.92rem;
+}
+
+.login-panel .button--primary {
+  background: linear-gradient(135deg, #f4d58b 0%, #cf9a3d 100%);
+  color: #4d1f18;
+  box-shadow:
+    0 12px 24px rgba(32, 13, 9, 0.28),
+    inset 0 1px 0 rgba(255, 246, 217, 0.82);
+}
+
+.login-panel .button--primary:hover {
+  box-shadow:
+    0 14px 28px rgba(32, 13, 9, 0.34),
+    inset 0 1px 0 rgba(255, 246, 217, 0.9);
+}
+
 @media (max-width: 1080px) {
   .page-grid,
   .overview-grid,
   .hero__metrics,
   .form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .login-grid,
+  .tree-metrics {
+    flex-direction: column;
+  }
+
+  .login-grid--solo {
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .tree-panel,
+  .login-panel {
+    min-width: 0;
   }
 
   .form-panel {
@@ -393,8 +743,17 @@ select:focus {
     padding: 18px 14px 40px;
   }
 
+  .login-shell {
+    padding: 18px 14px 40px;
+  }
+
   .topbar,
   .panel {
+    padding: 22px;
+  }
+
+  .login-topbar {
+    flex-direction: column;
     padding: 22px;
   }
 
@@ -403,8 +762,61 @@ select:focus {
     flex-direction: column;
   }
 
+  .tree-scene {
+    min-height: 360px;
+    padding: 18px;
+  }
+
+  .login-panel {
+    flex: 0 1 auto;
+    min-height: auto;
+    align-self: center;
+    max-width: 460px;
+    width: min(100%, 460px);
+    padding: 28px 26px 24px;
+    border-radius: 18px;
+    box-shadow:
+      0 24px 60px rgba(23, 9, 9, 0.48),
+      inset 0 1px 0 rgba(255, 234, 181, 0.34),
+      inset 0 -8px 18px rgba(66, 5, 21, 0.36);
+  }
+
+  .login-panel::before,
+  .login-panel::after {
+    width: 12px;
+    top: 0;
+    bottom: 0;
+  }
+
+  .tree-ornament {
+    width: 98px;
+    height: 98px;
+    padding: 12px;
+  }
+
+  .tree-ornament strong {
+    font-size: 1.35rem;
+  }
+
+  .tree-ornament--children {
+    left: 2%;
+  }
+
+  .tree-ornament--gifts {
+    right: 2%;
+  }
+
+  .tree-ornament--guardians {
+    right: 6%;
+    bottom: 18px;
+  }
+
   .topbar__actions {
     align-items: stretch;
+  }
+
+  .login-topbar__actions {
+    justify-items: stretch;
   }
 
   .language-toggle {
