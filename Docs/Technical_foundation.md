@@ -60,6 +60,22 @@ No new task may introduce parallel structures, duplicated logic, or ad hoc patte
 - Unit of Work must coordinate transactional consistency
 - API design must be secure, validated, and maintainable
 
+## Data Layer Change Rules
+- Any task that changes the data layer must preserve the separation between Domain, Application, Infrastructure, and API
+- Domain entities must represent business meaning and invariants, not database convenience only
+- Persistence-specific behavior must stay in the infrastructure layer and must not leak into controllers or transport models
+- Every persisted entity must have an explicit mapping class defining table name, keys, field rules, indexes, constraints, conversions, and relationships when applicable
+- Relationships must be defined deliberately in code, including requiredness, delete behavior, and navigation mapping when needed
+- Schema evolution must happen through migrations only; manual database changes outside migrations are not allowed
+- Every migration must be small, intentional, and traceable to a task or a clearly defined change in the model
+- Data layer tasks must protect existing data integrity, including nullability, length changes, unique constraints, default values, and relationship changes
+- Rename operations and destructive schema changes must be handled carefully to avoid accidental data loss
+- Transaction boundaries must remain explicit and must continue to be coordinated through the Unit of Work abstraction
+- Database context save behavior must stay consistent for audit fields, timestamps, and other cross-cutting persistence rules
+- Connection strings and database configuration must remain environment-aware and must never hardcode secrets or production-only assumptions in source code
+- Test coverage must be added or updated when data-layer behavior changes, especially for mappings, transactions, constraints, and audit behavior
+- Data layer tasks must document which entities, mappings, migrations, and persistence rules were introduced or changed
+
 ## Frontend Rules
 - Pages coordinate screens; components stay reusable and focused
 - Avoid oversized components with mixed responsibilities

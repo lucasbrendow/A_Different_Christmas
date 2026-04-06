@@ -403,10 +403,9 @@ input[type='checkbox'] {
 .login-page::before {
   z-index: -1;
   background-image: var(--login-background-image);
-  background-position: center;
+  background-position: left center;
   background-repeat: no-repeat;
-  background-size: cover;
-  transform: scale(1.03);
+  background-size: auto 148%;
 }
 
 .login-shell {
@@ -710,6 +709,11 @@ input[type='checkbox'] {
 }
 
 @media (max-width: 1080px) {
+  .login-page::before {
+    background-position: center;
+    background-size: cover;
+  }
+
   .page-grid,
   .overview-grid,
   .hero__metrics,
